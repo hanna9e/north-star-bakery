@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>North Star Bakery | Contact and Pre-Orders</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <img class="logo" src="images/bakery-logo_c.png" alt="North Star Bakery logo" width="200" height="171">
+        <nav aria-label="Main navigation">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Our Breads and Pastries</a></li>
+                <li><a href="about.html">About the Bakery</a></li>
+                <li><a href="contact.html" aria-current="page">Contact and Pre-Orders</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Contact Us and Place a Pre-Order</h1>
+        <p>Fill out the form below to reserve items or ask us a question. We reply within one business day. Pre-orders are paid at pickup.</p>
+
+        <div class="row top contact-layout">
+            <section class="form-area">
+                <h2>Pre-Order and Inquiry Form</h2>
+                <form action="#" method="post">
+                    <fieldset>
+                        <legend>Your Contact Information</legend>
+                        <p>
+                            <label for="name">Full name (required)</label>
+                            <input type="text" id="name" name="name" autocomplete="name" required minlength="2" maxlength="60">
+                        </p>
+                        <p>
+                            <label for="email">Email address (required)</label>
+                            <input type="email" id="email" name="email" autocomplete="email" required>
+                        </p>
+                        <p>
+                            <label for="phone">Phone number (optional, format 555-555-0142)</label>
+                            <input type="tel" id="phone" name="phone" autocomplete="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
+                        </p>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Your Request</legend>
+                        <p>
+                            <label for="request-type">Request type (required)</label>
+                            <select id="request-type" name="request-type" required>
+                                <option value="">Choose one</option>
+                                <option value="pre-order">Pre-order</option>
+                                <option value="custom-cake">Custom cake</option>
+                                <option value="event-tray">Event or catering tray</option>
+                                <option value="question">General question</option>
+                            </select>
+                        </p>
+                        <p>
+                            <label for="pickup-date">Pickup date (required)</label>
+                            <input type="date" id="pickup-date" name="pickup-date" min="2026-11-11" required>
+                        </p>
+                        <p>
+                            <label for="item-details">Item details, including quantities (required)</label>
+                            <textarea id="item-details" name="item-details" rows="5" cols="40" required minlength="10" maxlength="500"></textarea>
+                        </p>
+                        <p>
+                            <label for="allergy-notes">Allergy notes, if applicable</label>
+                            <textarea id="allergy-notes" name="allergy-notes" rows="3" cols="40" maxlength="300"></textarea>
+                        </p>
+                    </fieldset>
+
+                    <button type="submit">Send My Request</button>
+                </form>
+            </section>
+
+            <div>
+                <section class="card">
+                    <h2>Visit Us</h2>
+                    <address>
+                        North Star Bakery<br>
+                        214 Maple Street, Riverside<br>
+                        Phone: <a href="tel:+15555550142">(555) 555-0142</a><br>
+                        Email: <a href="mailto:hello@northstarbakery.example">hello@northstarbakery.example</a>
+                    </address>
+                    <p>Street parking is free before 9 a.m. We're two blocks from the Maple Street bus stop.</p>
+                </section>
+
+                <section class="card">
+                    <h2>Hours of Operation</h2>
+                    <ul class="hours">
+                        <li>Monday: Closed</li>
+                        <li>Tuesday to Friday: 6:30 a.m. to 6:00 p.m.</li>
+                        <li>Saturday and Sunday: 7:00 a.m. to 3:00 p.m.</li>
+                    </ul>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 North Star Bakery. Baked fresh in the neighborhood.</p>
+    </footer>
+</body>
+</html>
