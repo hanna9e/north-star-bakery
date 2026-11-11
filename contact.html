@@ -4,7 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>North Star Bakery | Contact and Pre-Orders</title>
+    <link rel="icon" href="images/bakery-logo_c.png" type="image/png">
     <link rel="stylesheet" href="css/styles.css">
+    <script src="js/storage.js" defer></script>
+    <script src="js/contact-form.js" defer></script>
 </head>
 <body>
     <header>
@@ -26,20 +29,25 @@
         <div class="row top contact-layout">
             <section class="form-area">
                 <h2>Pre-Order and Inquiry Form</h2>
-                <form action="#" method="post">
+                <p id="form-confirmation" class="form-confirmation" role="status" tabindex="-1" hidden></p>
+                <p id="prefill-note" class="prefill-note" hidden>We filled in your saved list from the Products page. You can still edit it below.</p>
+                <form id="preorder-form" action="#" method="post">
                     <fieldset>
                         <legend>Your Contact Information</legend>
                         <p>
                             <label for="name">Full name (required)</label>
-                            <input type="text" id="name" name="name" autocomplete="name" required minlength="2" maxlength="60">
+                            <input type="text" id="name" aria-describedby="name-error" name="name" autocomplete="name" required minlength="2" maxlength="60">
+                            <span id="name-error" class="error-message"></span>
                         </p>
                         <p>
                             <label for="email">Email address (required)</label>
-                            <input type="email" id="email" name="email" autocomplete="email" required>
+                            <input type="email" id="email" aria-describedby="email-error" name="email" autocomplete="email" required>
+                            <span id="email-error" class="error-message"></span>
                         </p>
                         <p>
                             <label for="phone">Phone number (optional, format 555-555-0142)</label>
-                            <input type="tel" id="phone" name="phone" autocomplete="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
+                            <input type="tel" id="phone" aria-describedby="phone-error" name="phone" autocomplete="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
+                            <span id="phone-error" class="error-message"></span>
                         </p>
                     </fieldset>
 
@@ -47,21 +55,24 @@
                         <legend>Your Request</legend>
                         <p>
                             <label for="request-type">Request type (required)</label>
-                            <select id="request-type" name="request-type" required>
+                            <select id="request-type" aria-describedby="request-type-error" name="request-type" required>
                                 <option value="">Choose one</option>
                                 <option value="pre-order">Pre-order</option>
                                 <option value="custom-cake">Custom cake</option>
                                 <option value="event-tray">Event or catering tray</option>
                                 <option value="question">General question</option>
                             </select>
+                            <span id="request-type-error" class="error-message"></span>
                         </p>
                         <p>
                             <label for="pickup-date">Pickup date (required)</label>
-                            <input type="date" id="pickup-date" name="pickup-date" min="2026-11-11" required>
+                            <input type="date" id="pickup-date" aria-describedby="pickup-date-error" name="pickup-date" min="2026-11-11" required>
+                            <span id="pickup-date-error" class="error-message"></span>
                         </p>
                         <p>
                             <label for="item-details">Item details, including quantities (required)</label>
-                            <textarea id="item-details" name="item-details" rows="5" cols="40" required minlength="10" maxlength="500"></textarea>
+                            <textarea id="item-details" aria-describedby="item-details-error" name="item-details" rows="5" cols="40" required minlength="10" maxlength="500"></textarea>
+                            <span id="item-details-error" class="error-message"></span>
                         </p>
                         <p>
                             <label for="allergy-notes">Allergy notes, if applicable</label>

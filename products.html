@@ -4,7 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>North Star Bakery | Products</title>
+    <link rel="icon" href="images/bakery-logo_c.png" type="image/png">
     <link rel="stylesheet" href="css/styles.css">
+    <script src="js/storage.js" defer></script>
+    <script src="js/preorder-list.js" defer></script>
 </head>
 <body>
     <header>
@@ -55,6 +58,32 @@
                 <p class="price"><strong>Price range:</strong> $35 to $120 per tray</p>
             </section>
         </div>
+
+        <section id="preorder-builder" class="preorder-builder" aria-labelledby="builder-heading" hidden>
+            <h2 id="builder-heading">Build Your Pre-Order List</h2>
+            <p>Pick a category, add what you'd like, and adjust quantities. Your list is saved on this device, so it'll still be here when you head to the <a href="contact.html">pre-order form</a>.</p>
+
+            <div class="row top builder-layout">
+                <div>
+                    <div id="menu-filters" class="filter-buttons" role="group" aria-label="Filter menu by category"></div>
+                    <p id="menu-count" class="menu-count"></p>
+                    <ul id="menu-items" class="menu-items"></ul>
+                </div>
+
+                <aside class="card my-list-panel" aria-labelledby="my-list-heading">
+                    <h3 id="my-list-heading">My Pre-Order List</h3>
+                    <p id="list-empty">Your list is empty. Tap "Add" on any item to start.</p>
+                    <ul id="my-list" class="my-list"></ul>
+                    <div id="list-footer" hidden>
+                        <p class="list-total">Estimated total: <strong id="list-total">$0.00</strong></p>
+                        <p class="list-note">You'll pay at pickup. Final prices may change slightly with seasonal items.</p>
+                        <a class="button" href="contact.html">Send This List</a>
+                        <button type="button" id="clear-list" class="text-button">Clear list</button>
+                    </div>
+                    <p id="list-status" class="visually-hidden" role="status" aria-live="polite"></p>
+                </aside>
+            </div>
+        </section>
     </main>
 
     <footer>

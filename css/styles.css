@@ -361,6 +361,178 @@ footer p {
     margin: 0;
 }
 
+/* ---------- Pre-order list builder (products page, Touchstone 4) ---------- */
+.preorder-builder {
+    margin-top: 2.5rem;
+}
+
+.filter-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.filter-button {
+    font: inherit;
+    font-weight: 700;
+    color: #3B2618;
+    background-color: #FBF6EE;
+    border: 2px solid #3B2618;
+    border-radius: 999px;
+    padding: 0.4rem 1rem;
+    cursor: pointer;
+}
+
+.filter-button:hover,
+.filter-button:focus {
+    background-color: #F1E4D3;
+}
+
+.filter-button[aria-pressed="true"] {
+    background-color: #3B2618;
+    color: #FBF6EE;
+}
+
+.menu-count {
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.menu-items,
+.my-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid #F1E4D3;
+}
+
+.add-button,
+.qty-button {
+    font: inherit;
+    font-weight: 700;
+    background-color: #9C4A1A;
+    color: #FBF6EE;
+    border: none;
+    border-radius: 999px;
+    cursor: pointer;
+}
+
+.add-button {
+    padding: 0.45rem 1.2rem;
+}
+
+.qty-button {
+    width: 2rem;
+    height: 2rem;
+    line-height: 1;
+}
+
+.add-button:hover,
+.add-button:focus,
+.qty-button:hover,
+.qty-button:focus {
+    background-color: #3B2618;
+}
+
+.list-item {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.6rem 0;
+    border-bottom: 1px solid #FBF6EE;
+}
+
+.list-item-name {
+    flex: 1 1 100%;
+    font-weight: 700;
+}
+
+.qty-controls {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.qty {
+    min-width: 1.5rem;
+    text-align: center;
+}
+
+.list-item-price {
+    margin-left: auto;
+}
+
+.list-total {
+    font-size: 1.15rem;
+    margin: 1rem 0 0.25rem;
+}
+
+.list-note {
+    font-size: 0.9rem;
+}
+
+.text-button {
+    font: inherit;
+    background: none;
+    border: none;
+    color: #9C4A1A;
+    text-decoration: underline;
+    cursor: pointer;
+    margin-left: 0.75rem;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+}
+
+/* ---------- Form feedback (contact page, Touchstone 4) ---------- */
+/* #A61B1B is only used for error states so it stands out from the brand colors. */
+.error-message {
+    display: block;
+    color: #A61B1B;
+    font-weight: 700;
+    font-size: 0.95rem;
+    margin-top: 0.3rem;
+}
+
+.error-message:empty {
+    display: none;
+}
+
+input.is-invalid,
+select.is-invalid,
+textarea.is-invalid {
+    border-color: #A61B1B;
+    background-color: #FFF4F2;
+}
+
+.form-confirmation,
+.prefill-note {
+    background-color: #F1E4D3;
+    border-left: 6px solid #9C4A1A;
+    border-radius: 8px;
+    padding: 0.9rem 1rem;
+}
+
+.form-confirmation {
+    font-weight: 700;
+}
+
 /* ==========================================================
    Tablets and up (600px)
    ========================================================== */
@@ -431,7 +603,13 @@ footer p {
         flex-basis: 100%;
     }
 
-    .contact-layout > .form-area {
+    .contact-layout > .form-area,
+    .builder-layout > div {
         flex: 2;
+    }
+
+    .my-list-panel {
+        position: sticky;
+        top: 1rem;
     }
 }
